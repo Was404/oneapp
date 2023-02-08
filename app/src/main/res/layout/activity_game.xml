@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bg_game" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_next"
         android:layout_width="393dp"
         android:layout_height="70dp"
@@ -24,11 +24,12 @@
         android:fontFamily="@font/baloo"
         android:text="@string/btn_next"
         android:textSize="28sp"
+        android:background="@drawable/btn_stroke_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_3" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_1"
         android:layout_width="282dp"
         android:layout_height="94dp"
@@ -36,12 +37,13 @@
         android:fontFamily="@font/baloo"
         android:text="Button"
         android:textSize="18sp"
+        android:background="@drawable/btn_stroke_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_2"
         android:layout_width="282dp"
         android:layout_height="94dp"
@@ -49,15 +51,17 @@
         android:fontFamily="@font/baloo"
         android:text="Button"
         android:textSize="18sp"
+        android:background="@drawable/btn_stroke_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_1" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_3"
         android:layout_width="282dp"
         android:layout_height="94dp"
         android:layout_marginTop="36dp"
+        android:background="@drawable/btn_stroke_next"
         android:fontFamily="@font/baloo"
         android:text="Button"
         android:textSize="18sp"
@@ -69,13 +73,14 @@
         android:id="@+id/linearLayout2"
         android:layout_width="411dp"
         android:layout_height="296dp"
-        android:background="@color/Fire_brink"
+        android:background="@drawable/bg_text"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/questions"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_alternates_medium"
