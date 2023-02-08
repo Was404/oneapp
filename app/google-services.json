@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "879946317275",
+    "project_id": "daka1-2ce46",
+    "storage_bucket": "daka1-2ce46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879946317275:android:10d12d9f2a9044bf28bbfe",
+        "android_client_info": {
+          "package_name": "win.winwin.oneapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879946317275-vr4hrtamsjuhe4767uv8v6e33fi3dt81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0hHjL4760UxXXcFzWYyW3Koah7gABK9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879946317275-vr4hrtamsjuhe4767uv8v6e33fi3dt81.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

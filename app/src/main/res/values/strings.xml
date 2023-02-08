@@ -1,0 +1,145 @@
+<resources>
+    <string name="app_name">Win</string>
+    <string name="btn_next">Next ➡</string>
+    <string name="name">Win</string>
+    <string name="test_failed">Health is the most valuable thing we have. Our body cannot be replaced by another, if suddenly it stopped working as expected, it is given to us for life. Therefore, taking care of him becomes the number one task throughout life.
+        Sorry, you didn\'t pass the test. I hope you learned a lot about healthy eating.</string>
+    <string name="test_merge">Pretty good result! Proper nutrition is to provide the body with a complete diet, which includes all the products it needs: meat, cereals, vegetables, fruits.
+        The selection of a diet is one of the main tasks in proper nutrition, but following it daily is no less important.</string>
+    <string name="test_success">Congratulations! You really know healthy eating well. Compliance with the rules of a healthy diet, combined with regular exercise,
+        will help maintain health and keep the body in good shape for a long time. </string>
+
+    <string name="large_dialog">Football is without exaggeration the most popular sport in the world.
+        Everyone more or less knows the rules of the game, but how well do they know football itself?</string>
+    <string-array name="questionArray">
+        <item>Question №1\n
+            Which vegetable is good for vision?
+        </item>
+        <item>Question №2\n
+            Which vegetable has the most vitamin C?
+        </item>
+        <item>Question №3\n
+            Which vitamin is called the growth vitamin?
+        </item>
+        <item>Question №4\n
+            Which juice is called the king of vitamins?
+        </item>
+        <item>Question №5\n
+            What is the building material for our body?
+        </item>
+        <item>Question №6\n
+            Nutrients that give the body energy?
+        </item>
+        <item>Question №7\n
+            Man began to use this product more than 10,000 years ago due to the fact that he tamed a wild animal. In ancient Egypt,
+            this product was called the "white river". It is an important source of calcium in our diet.\n What is this product?
+        </item>
+        <item>Question №8\n
+            It is one of the staples in human nutrition. It serves as a source of protein, both first and second courses are prepared from it.
+            It is advised to eat it in combination with vegetable side dishes. It is believed that in this case it is better absorbed.
+        </item>
+        <item>Question №9\n
+            Fish oil is used in children\`s and dietary nutrition, as it contributes to…
+        </item>
+        <item>Question №10\n
+            It can be green, red, yellow, white and black. Its use in many countries has become a real ritual.
+            It helps to invigorate, cools in the heat, warms in the cold.
+        </item>
+    </string-array>
+    <string-array name="variable1">
+    <item>
+            carrot
+    </item>
+        <item>
+        In beet
+    </item>
+        <item>
+        Vitamin C
+    </item>
+        <item>
+        Peach juice
+    </item>
+        <item>
+        Fats
+    </item>
+        <item>
+        carbohydrates
+    </item>
+        <item>
+        Milk
+    </item>
+        <item>
+        Cheese
+    </item>
+        <item>
+            …increase in blood cholesterol
+        </item>
+        <item>
+            Compote
+        </item>
+    </string-array>
+    <string-array name="variable2">
+    <item>
+        cabbage
+    </item>
+        <item>
+            pepper
+    </item>
+        <item>
+           Vitamin A
+    </item>
+        <item>
+           Pineapple juice
+    </item>
+        <item>
+            proteins
+    </item>
+        <item>
+            Fats
+    </item>
+        <item>
+        water
+    </item>
+        <item>
+        meat
+    </item>
+        <item>
+            …no effect on cholesterol
+        </item>
+        <item>
+            fruit drink
+        </item>
+    </string-array>
+    <string-array name="variable3">
+    <item>
+            tomato
+    </item>
+        <item>
+            in cabbage
+    </item>
+        <item>
+            Vitamin E
+    </item>
+        <item>
+            Orange juice
+    </item>
+        <item>
+           carbohydrates
+    </item>
+        <item>
+            proteins
+    </item>
+        <item>
+        yogurt
+    </item>
+        <item>
+        Milk
+    </item>
+        <item>
+        …lowering blood cholesterol
+        </item>
+        <item>
+        tea
+        </item>
+    </string-array>
+</resources>
