@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="414dp"
-        android:layout_height="731dp"
+        android:layout_width="466dp"
+        android:layout_height="824dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bg_game" />
@@ -34,7 +34,7 @@
         android:layout_width="282dp"
         android:layout_height="94dp"
         android:layout_marginTop="55dp"
-        android:background="@drawable/btn_stroke_next"
+        android:background="@drawable/style_btn"
         android:fontFamily="@font/baloo"
         android:text="Button"
         android:textSize="18sp"
@@ -51,7 +51,7 @@
         android:fontFamily="@font/baloo"
         android:text="Button"
         android:textSize="18sp"
-        android:background="@drawable/btn_stroke_next"
+        android:background="@drawable/style_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_1" />
@@ -61,7 +61,7 @@
         android:layout_width="282dp"
         android:layout_height="94dp"
         android:layout_marginTop="36dp"
-        android:background="@drawable/btn_stroke_next"
+        android:background="@drawable/style_btn"
         android:fontFamily="@font/baloo"
         android:text="Button"
         android:textSize="18sp"

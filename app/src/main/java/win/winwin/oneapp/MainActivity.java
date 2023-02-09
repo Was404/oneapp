@@ -132,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
                     webview.restoreState(savedInstanceState);
                 else
                     webview.loadUrl(urlq);
-                //webview.setVisibility(View.VISIBLE);
             }
         }
     }
@@ -192,12 +191,7 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Warning")
                 .setMessage("The application requires an internet connection")
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                })
+                .setPositiveButton("Ok", (dialogInterface, i) -> finish())
                 .show();
     }
     //

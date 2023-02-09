@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Win</string>
     <string name="btn_next">Next ➡</string>
-    <string name="name">Win</string>
-    <string name="test_failed">Health is the most valuable thing we have. Our body cannot be replaced by another, if suddenly it stopped working as expected, it is given to us for life. Therefore, taking care of him becomes the number one task throughout life.
+    <string name="res">Restart</string>
+    <string name="test_failed">Health is the most valuable thing we have. Our body cannot be replaced by another, if suddenly it stopped working as expected, it is given to us for life.
         Sorry, you didn\'t pass the test. I hope you learned a lot about healthy eating.</string>
-    <string name="test_merge">Pretty good result! Proper nutrition is to provide the body with a complete diet, which includes all the products it needs: meat, cereals, vegetables, fruits.
-        The selection of a diet is one of the main tasks in proper nutrition, but following it daily is no less important.</string>
+    <string name="test_merge">Pretty good result! Proper nutrition is to provide the body with a complete diet, which includes all the products it needs: meat, cereals, vegetables, fruits.</string>
     <string name="test_success">Congratulations! You really know healthy eating well. Compliance with the rules of a healthy diet, combined with regular exercise,
         will help maintain health and keep the body in good shape for a long time. </string>
 
