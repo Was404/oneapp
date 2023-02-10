@@ -32,42 +32,17 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private WebView webview;
     InternetDetector cd;
     final String NewUrl = "";
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        webview.saveState(outState);
-        super.onSaveInstanceState(outState);
-    }
-    @SuppressLint("SetJavaScriptEnabled")
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         //ЛОКАЛ ХРАНЕНИЕ
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         //ВЕБВЬЮ
-        webview = (WebView) findViewById(R.id.webview);
-        webview.setWebViewClient(new WebViewClient());
-        WebSettings webSettings = webview.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        CookieManager cookieManager = CookieManager.getInstance();
-        cookieManager.setAcceptCookie(true);
-        webSettings.setDomStorageEnabled(true);
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setDomStorageEnabled(true);
-        webSettings.setDatabaseEnabled(true);
-        webSettings.setSupportZoom(false);
-        webSettings.setAllowFileAccess(true);
-        webSettings.setAllowContentAccess(true);
         //КОНЕЦ ВЕБВЬЮ
 
         //ИНТЕРНЕТ
@@ -92,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                                     boolean updated = task.getResult();
                                     Log.d(TAG, "Config params updated: " + updated);
                                     String find = mFirebaseRemoteConfig.getString("url");
-                                    System.out.println(find);
                                     //если не получаем то игра иначе сохраняем и запускаем веб
                                     if (find.isEmpty() || devphone()) {
                                         Intent intent = new Intent(MainActivity.this, GameActivity.class);
@@ -100,11 +74,7 @@ public class MainActivity extends AppCompatActivity {
                                     } else {
                                         editor.putString(NewUrl, find);
                                         editor.commit();
-                                        webview.loadUrl(find);
-                                        if (savedInstanceState != null)
-                                            webview.restoreState(savedInstanceState);
-                                        else
-                                            webview.loadUrl(find);
+                                        Intent intent = new Intent(MainActivity.this, WebActivity.class);
                                     }
                                 } else {
                                     Toast.makeText(MainActivity.this, "Fetch failed",
@@ -127,14 +97,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Please turn internet on", Toast.LENGTH_SHORT).show();
                 showDialog("win.winwin.oneapp");
             } else {
-                webview.loadUrl(urlq);
-                if (savedInstanceState != null)
-                    webview.restoreState(savedInstanceState);
-                else
-                    webview.loadUrl(urlq);
+                Intent intent = new Intent(MainActivity.this, WebActivity.class);
             }
         }
     }
+    @SuppressLint("SetJavaScriptEnabled")
     private Boolean devphone() {
         if (BuildConfig.DEBUG) return true;
 
@@ -170,22 +137,6 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
-
-    public class WebViewClient extends android.webkit.WebViewClient {
-        @TargetApi(Build.VERSION_CODES.N)
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-            view.loadUrl(request.getUrl().toString());
-            return true;
-        }
-
-        //для старых устройств
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-    }
     //ВКЛЮЧИ ИНЕТ
     private void showDialog(final String appPackageName){
         final AlertDialog dialog = new AlertDialog.Builder(this)
