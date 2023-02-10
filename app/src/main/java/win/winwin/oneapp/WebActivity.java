@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WebActivity extends AppCompatActivity {
 
     private WebView webview;
-    MainActivity NewUrl;
+    MainActivity mainActivity = new MainActivity();
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         webview.saveState(outState);
@@ -30,7 +30,7 @@ public class WebActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        webview.loadUrl(String.valueOf(NewUrl));
+        webview.loadUrl(mainActivity.getNewUrl());
         //ВЕБВЬЮ
         webview = (WebView) findViewById(R.id.webview);
         webview.setWebViewClient(new WebViewClient());
@@ -39,7 +39,7 @@ public class WebActivity extends AppCompatActivity {
         if (savedInstanceState != null)
             webview.restoreState(savedInstanceState);
         else
-            webview.loadUrl(String.valueOf(NewUrl));
+            webview.loadUrl(mainActivity.getNewUrl());
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
         webSettings.setDomStorageEnabled(true);

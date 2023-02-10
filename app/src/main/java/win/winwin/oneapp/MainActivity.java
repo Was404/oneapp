@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     InternetDetector cd;
     final String NewUrl = "";
+    public String getNewUrl(){
+        return NewUrl;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
