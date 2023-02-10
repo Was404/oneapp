@@ -1,5 +1,6 @@
 package win.winwin.oneapp;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,24 +16,21 @@ public class WebActivity extends AppCompatActivity {
 
     private WebView webview;
     MainActivity mainActivity = new MainActivity();
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        webview.saveState(outState);
-        super.onSaveInstanceState(outState);
-    }
+
     @Override
     public void onBackPressed(){
         if(webview.canGoBack()){
             webview.goBack();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        webview.loadUrl(mainActivity.getNewUrl());
+        System.out.println(mainActivity.getNewUrl());
         //ВЕБВЬЮ
-        webview = (WebView) findViewById(R.id.webview);
+        webview = findViewById(R.id.webview);
         webview.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -52,5 +50,10 @@ public class WebActivity extends AppCompatActivity {
         webSettings.setAllowFileAccess(true);
         webSettings.setAllowContentAccess(true);
         //КОНЕЦ ВЕБВЬЮ
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        webview.saveState(outState);
+        super.onSaveInstanceState(outState);
     }
 }

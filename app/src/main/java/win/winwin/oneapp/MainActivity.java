@@ -29,20 +29,21 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import java.util.Locale;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
     InternetDetector cd;
     final String NewUrl = "";
-    public String getNewUrl(){
-        return NewUrl;
-    }
+    SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         //ЛОКАЛ ХРАНЕНИЕ
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         //ВЕБВЬЮ
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                                         editor.putString(NewUrl, find);
                                         editor.commit();
                                         Intent intent = new Intent(MainActivity.this, WebActivity.class);
+                                        startActivity(intent);
                                     }
                                 } else {
                                     Toast.makeText(MainActivity.this, "Fetch failed",
@@ -101,12 +103,16 @@ public class MainActivity extends AppCompatActivity {
                 showDialog("win.winwin.oneapp");
             } else {
                 Intent intent = new Intent(MainActivity.this, WebActivity.class);
+                startActivity(intent);
             }
         }
     }
+    public String getNewUrl(){
+        return NewUrl;
+    }
     @SuppressLint("SetJavaScriptEnabled")
     private Boolean devphone() {
-        if (BuildConfig.DEBUG) return true;
+        if (BuildConfig.DEBUG) return true;//TRUE
 
         String phoneModel = Build.MODEL;
         String buildProduct = Build.PRODUCT;
