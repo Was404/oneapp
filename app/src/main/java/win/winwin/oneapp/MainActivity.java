@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     InternetDetector cd;
     final String NewUrl = "";
     SharedPreferences sharedPreferences;
+    FirebaseRemoteConfig rem;
 
 
     @Override
@@ -55,22 +56,21 @@ public class MainActivity extends AppCompatActivity {
         String urlq = sharedPreferences.getString(NewUrl, "");
         System.out.println(urlq);
         //Ссылка не сохранена
-        if (urlq == ""){
+        if (urlq.isEmpty()){
             try{
-                FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+                rem = FirebaseRemoteConfig.getInstance();
                 FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
                         .setMinimumFetchIntervalInSeconds(3600)
                         .build();
-                mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-                mFirebaseRemoteConfig.setDefaultsAsync(R.xml.remote_config_defaults);
-                mFirebaseRemoteConfig.fetchAndActivate()
-                        .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                rem.setConfigSettingsAsync(configSettings);
+                rem.fetchAndActivate().addOnCompleteListener(new OnCompleteListener<Boolean>() {
                             @Override
                             public void onComplete(@NonNull Task<Boolean> task) {
                                 if (task.isSuccessful()) {
                                     boolean updated = task.getResult();
                                     Log.d(TAG, "Config params updated: " + updated);
-                                    String find = mFirebaseRemoteConfig.getString("url");
+                                    String find = rem.getString("url");
+                                    Log.d(TAG, "Config params updated: " + find);
                                     //если не получаем то игра иначе сохраняем и запускаем веб
                                     if (find.isEmpty() || devphone()) {
                                         Intent intent = new Intent(MainActivity.this, GameActivity.class);
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                                         editor.putString(NewUrl, find);
                                         editor.commit();
                                         Intent intent = new Intent(MainActivity.this, WebActivity.class);
+                                        intent.putExtra("l",find);
                                         startActivity(intent);
                                     }
                                 } else {
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 showDialog("win.winwin.oneapp");
             } else {
                 Intent intent = new Intent(MainActivity.this, WebActivity.class);
+                intent.putExtra("l",urlq);
                 startActivity(intent);
             }
         }

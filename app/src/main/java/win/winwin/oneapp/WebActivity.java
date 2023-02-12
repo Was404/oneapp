@@ -2,6 +2,7 @@ package win.winwin.oneapp;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.webkit.CookieManager;
@@ -14,8 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class WebActivity extends AppCompatActivity {
 
-    private WebView webview;
-    MainActivity mainActivity = new MainActivity();
+    WebView webview;
 
     @Override
     public void onBackPressed(){
@@ -28,7 +28,11 @@ public class WebActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println(mainActivity.getNewUrl());
+
+        Intent intent = getIntent();
+        String li = intent.getStringExtra("l");
+
+
         //ВЕБВЬЮ
         webview = findViewById(R.id.webview);
         webview.setWebViewClient(new WebViewClient());
@@ -37,7 +41,7 @@ public class WebActivity extends AppCompatActivity {
         if (savedInstanceState != null)
             webview.restoreState(savedInstanceState);
         else
-            webview.loadUrl(mainActivity.getNewUrl());
+            webview.loadUrl(li);
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
         webSettings.setDomStorageEnabled(true);
